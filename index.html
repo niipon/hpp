@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>С Днем Рождения ❤️</title>
+
+<!-- <link rel="stylesheet" href="style.css"> -->
+</head>
+<body>
+
+<div class="hearts"></div>
+
+<h1>❤️ С Днем Рождения дорогая тетя ❤️</h1>
+
+<div class="parents">
+
+<img src="mother.png" class="mom">
+
+
+</div>
+
+<p class="text">
+Дорогая тётя!
+
+Поздравляю тебя с днём рождения! 🎉 Желаю крепкого здоровья, счастья, любви и исполнения всех желаний. Пусть каждый день приносит радость, улыбки и хорошее настроение ❤️
+</p>
+
+<div class="footer">
+С любовью ❤️
+</div>
+
+<script>
+    
+setInterval(()=>{
+
+let heart=document.createElement("div");
+
+heart.innerHTML="❤️";
+
+heart.className="heart";
+
+heart.style.left=Math.random()*100+"vw";
+
+heart.style.animationDuration=3+Math.random()*4+"s";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},7000);
+
+},300);
+</script>
+
+<style>
+    body{
+margin:0;
+height:100vh;
+overflow:hidden;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+
+background:linear-gradient(135deg,#ffb6d5,#ffd6e8,#ffecc7);
+font-family:Arial;
+}
+
+h1{
+font-size:45px;
+color:white;
+text-shadow:0 0 20px hotpink;
+animation:fade 2s;
+}
+
+.parents{
+display:flex;
+align-items:center;
+margin:40px;
+}
+
+.mom,.dad{
+width:220px;
+transition:1s;
+animation:hug 5s infinite alternate;
+}
+
+.text{
+width:70%;
+text-align:center;
+font-size:24px;
+color:white;
+line-height:40px;
+animation:fade 4s;
+}
+
+.footer{
+margin-top:30px;
+font-size:30px;
+color:white;
+}
+
+@keyframes hug{
+
+0%{
+transform:translateX(0px);
+}
+
+100%{
+transform:translateX(30px);
+}
+
+}
+
+@keyframes fade{
+
+from{
+opacity:0;
+transform:translateY(30px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+
+}
+
+.heart{
+position:absolute;
+font-size:30px;
+animation:fly 6s linear infinite;
+}
+
+@keyframes fly{
+
+0%{
+transform:translateY(100vh);
+opacity:1;
+}
+
+100%{
+transform:translateY(-100px);
+opacity:0;
+}
+
+}
+</style>
+
+</body>
+</html>
